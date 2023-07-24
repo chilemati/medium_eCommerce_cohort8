@@ -1,0 +1,24 @@
+@import "./extends";
+@import "./media-queries";
+@import "./mixims";
+@import "./variables";
+
+.navBar {
+  @include flex_between();
+  background-color: $pri_col;
+  @extend %container;
+  a {
+    color: $pri_text_col;
+    text-decoration: none;
+  }
+  @include mobile() {
+    .hide{
+      display: none;
+    }
+  }
+  @include desktop() {
+    .hide{
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+//A mini e-commerce project
+
+//abilities
+1. Login and signUp
+2. normal users can not create, update, delete a product
+3. sub-admins can create, update, delete a product
+4. add to cart but no purchasing functionality
+5. pin verification before each admin and sub-admin activity
+
+
+//users state
+1. basic has not registered
+2. normal has registered
+3. sub-admins
+4. admin
+
+//***************** STEPS *******************
+1. git init -y
+2. npm install lodash multer cloudinary mongoose bcrypt jsonwebtoken nodemon helmet express body-parser cookie-parser dotenv cors
+3. start server // show on console: listening to request on port 4000
+4. create connectDb file in your ultils folder
+5. make sure db connects before listening to request on port 400 shows
+6. create a few routes with their corresponding controllers. then connect the routes file using app.use()
+7. create the user model file and user routes(get,post,delete,patch) and their controllers
+8. create hashIt service and make sure the user password hashed before saving (delete all previous user)
+9. create getToken and createCookie service. then make sure that when a user is created, the user gets a token that expires within 5mins
+10. create verifyToken service that uses the token to know if a user is signed in or not(make sure to save the email and role when creating the jsonwebtoken).
+11. create the isLoggedIn middleware, use the verifyToken service here to know if the cookie sent by user browser this authentic. you should be able to access the email and role if true. if the user does not have a genuine token, block access to route (add this middleware to each route you want only signed user to access)
+12. now create the adminOly and admin_and_subAdmin middleware and test then by adding to the route you want then to be
+12b. add login route and controller. the compaireIt sevice is used here to check if the password user sent is same as the hashed on in db. send jsonwebtoken if email and password matches
+13. create your product model
+14. create your multer and cloudinary in ultils folder add test them. (add upload.single('prodImg') in any route you need access to req.body from now on)
+15. now create some products
+16. add abilities to find all products, delete product and update product.
+17. activate product likes
+18. activate add to cart (you make have to delete all previous users)
+19. activate pin verification (you may also have to delete all previous user)

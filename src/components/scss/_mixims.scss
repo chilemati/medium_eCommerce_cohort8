@@ -1,0 +1,32 @@
+@mixin flex_between {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+@mixin flex_col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+@mixin grid($number) {
+  display: grid;
+  grid-template-columns: repeat($number, 1fr);
+  place-items: center;
+}
+@mixin gridDyn() {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+}
+@mixin image($url) {
+  background-image: url($url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

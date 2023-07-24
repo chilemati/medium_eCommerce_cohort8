@@ -1,0 +1,28 @@
+%container_margin {
+  //@extends container_margin;
+  padding: 1rem;
+  margin: 1rem 10%;
+}
+%container {
+  padding: 0.5rem 1rem;
+}
+%transition {
+  transition: all 0.4s ease-in;
+}
+%shadow {
+  box-shadow: 4px 4px 20px rgb(0, 0, 0, 0.4);
+}
+
+%btn {
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  &:hover {
+    background-color: brown;
+    color: white;
+    border-color: transparent;
+    @extend %transition;
+  }
+}
